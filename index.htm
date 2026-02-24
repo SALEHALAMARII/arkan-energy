@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أركان الطاقة للتجارة - Arkan Energy Trading</title>
+    <meta name="description" content="أركان الطاقة للتجارة - متخصصون في بطاريات السيارات، الشاحنات، وعربات الجولف بأحدث التقنيات.">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+    <script>
+        document.documentElement.lang = localStorage.getItem('selectedLang') || 'ar';
+        document.documentElement.dir = (localStorage.getItem('selectedLang') === 'en') ? 'ltr' : 'rtl';
+    </script>
+    <link rel="icon" type="image/png" href="icon/battery.png">
+
+    <link rel="apple-touch-icon" href="icon/battery.png">
+
+    <link rel="shortcut icon" href="icon/battery.png" type="image/x-icon">
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+        /* تم تغيير الخلفية الأساسية لتكون البيضاء #ffffff */
+        body { 
+            font-family: 'Cairo', sans-serif; 
+            scroll-behavior: smooth; 
+            background-color: #ffffff; 
+            color: #485159; 
+        }
+        
+        /* تم تغيير لون التدرج واللون الأساسي للأصفر #ffce08 */
+        .orange-gradient { background: linear-gradient(90deg, #ffce08 0%, #ffce08 100%); }
+        
+        /* تم تغيير خلفية الهيدر لتناسب التصميم الفاتح */
+        .glass-header { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+        
+        .reveal { opacity: 0; }
+        
+        /* تم تعديل ألوان البطاقات والحدود لتناسب الخلفية البيضاء والرمادي #485159 */
+        .product-card { transition: all 0.4s ease; border: 1px solid #e5e7eb; background: #ffffff; }
+        .product-card:hover { border-color: #ffce08; transform: translateY(-10px); background: #f9fafb; }
+        
+        /* تم تغيير لون نقاط التنقل للأصفر #ffce08 */
+        .swiper-pagination-bullet-active { background: #ffce08 !important; }
+        
+        /* استخدام المسارات النسبية وإضافة خاصية font-display لتحسين الأداء */
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('./font/GE_SS_Two_Light.otf') format('opentype');
+            font-weight: 300; 
+            font-style: normal;
+            font-display: swap; /* تمنع اختفاء النص أثناء تحميل الخط في الشبكات البطيئة */
+        }
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('./font/GE_SS_Two_Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('./font/GE-SS-Two-Bold.otf') format('opentype');
+            font-weight: bold; 
+            font-style: normal;
+            font-display: swap;
+        }
+        * {
+            font-family: 'GE SS Two', sans-serif !important;
+        }
+        
+        /* تم التأكد من أن جميع النصوص تستخدم اللون الرمادي الجديد #485159 */
+        header nav a, .menu-item {
+            font-family: 'GE SS Two';
+            font-weight: 500;
+            color: #485159;
+        }
+        .stat-number, .counter {
+            font-family: 'GE SS Two';
+            font-weight: bold; 
+            color: #485159;
+        }
+        .stat-text, .label {
+            font-family: 'GE SS Two';
+            font-weight: 300; 
+            color: #485159;
+        }
+        .btn-primary, button, input[type="submit"] {
+            font-family: 'GE SS Two';
+            font-weight: bold;
+        }
+
+
+        /* عندما تكون الصفحة إنجليزية */
+        html[lang="en"] body {
+            font-family: 'Inter', sans-serif; /* أو أي خط لاتيني تفضله */
+        }
+
+        /* عندما تكون الصفحة عربية */
+        html[lang="ar"] body {
+            font-family: 'Cairo', sans-serif; /* خطك العربي الحالي */
+        }
+
+        /* سلاسة التحويل */
+        body {
+            transition: direction 0.3s ease, font-family 0.3s ease;
+        }
+
+
+
+
+
+        /* هذا الكود يجبر المتصفح على عرض الأرقام بشكلها الإنجليزي */
+        html[lang="en"] * {
+            font-variant-numeric: lining-nums !important;
+            font-feature-settings: "lnum" 1, "tnum" 1 !important;
+            font-family: Arial, sans-serif !important; /* تغيير الخط لخط يدعم الأرقام الإنجليزية فقط */
+        }
+
+    </style>
+</head>
+<body class="bg-black text-white">
+
+   <header class="fixed top-0 w-full z-50 glass-header border-b border-[#485159]/10 bg-white/80 backdrop-blur-md">
+        <div class="container mx-auto px-4 md:px-6 py-2 md:py-4 flex justify-between items-center">
+            
+            <div class="flex-shrink-0 w-32 md:w-48">
+                <a href="#home" class="flex items-center">
+                    <img id="main-logo" src="img/logo_dart.png" alt="أركان الطاقة" class="h-8 md:h-12 w-auto object-contain">
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-8"> 
+                <a href="#home" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+                <a href="#about" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="من نحن" data-en="About Us">من نحن</a>
+                <a href="#features" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="استراتيجيتنا" data-en="Our Strategy">استراتيجيتنا</a>
+                <a href="#products" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="منتجاتنا" data-en="Products">منتجاتنا</a>
+                <a href="#branches" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="فروعنا" data-en="Branches">فروعنا</a>
+                <a href="#contact" class="text-[#485159] hover:text-[#ffce08] font-medium transition-colors" data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</a>
+            </nav>
+
+            <div class="flex items-center gap-1 md:gap-4 flex-shrink-0 justify-end">
+                
+                <button id="lang-switch" class="flex items-center gap-1 md:gap-2 px-2 md:px-3 py-2 text-[#485159] hover:text-[#ffce08] transition-all font-bold text-xs md:text-sm">
+                    <span id="lang-text">English</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 md:w-[18px] md:h-[18px]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+
+                <a href="https://arkan-battery.com/" 
+                class="bg-[#ffce08] text-[#485159] px-3 md:px-6 py-1.5 md:py-2 rounded-full font-bold text-[10px] md:text-sm transition hover:scale-105 shadow-sm whitespace-nowrap inline-block flex-none"
+                data-ar="اذهب الى المتجر" 
+                data-en="Go to Store">
+                اذهب الى المتجر
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden bg-[#ffffff]">
+        <div class="relative text-center px-4 z-10 reveal">
+            <span class="text-[#ffce08] font-bold tracking-widest mb-3 md:mb-4 block uppercase text-xs md:text-base" 
+                data-ar="موثوقية بلا حدود" 
+                data-en="Reliability Without Limits">
+                موثوقية بلا حدود
+            </span>
+            
+            <h1 class="text-3xl md:text-8xl font-black mb-4 md:mb-6 leading-tight text-[#485159]">
+                <span data-ar="أركان الطاقة.." data-en="Arkan Energy..">أركان الطاقة..</span><br>
+                <span class="text-[#ffce08]" data-ar="شريكك الأول على الطريق" data-en="Your First Partner on the Road">شريكك الأول على الطريق</span>
+            </h1>
+            
+            <p class="text-[#485159]/80 text-sm md:text-2xl max-w-2xl mx-auto mb-8 md:mb-10 leading-relaxed font-medium px-2 md:px-0"
+            data-ar="تأسسنا عام 2017 لنقود التغيير في حلول طاقة السيارات في المملكة، نحن لا نقدم مجرد بطاريات، بل نمنحك الثقة والأداء الذي تستحقه سيارتك، خيارك الأمثل لطاقة تدوم."
+            data-en="Founded in 2017 to lead the change in automotive power solutions in the Kingdom, we don't just provide batteries; we give you the confidence and performance your car deserves. Your ultimate choice for energy that lasts.">
+                تأسسنا عام 2017 لنقود التغيير في حلول طاقة السيارات في المملكة، نحن لا نقدم مجرد بطاريات، بل نمنحك الثقة والأداء الذي تستحقه سيارتك، خيارك الأمثل لطاقة تدوم.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-3 md:gap-4 justify-center items-center">
+                <a href="#products" class="orange-gradient text-[#485159] font-black px-8 md:px-12 py-3 md:py-4 rounded-full text-base md:text-lg shadow-lg shadow-[#ffce08]/20 transition hover:scale-105 w-64 md:w-auto"
+                data-ar="تصفح المنتجات" 
+                data-en="Browse Products">
+                    تصفح المنتجات
+                </a>
+                
+                <a href="#about" class="bg-[#485159]/5 border border-[#485159]/20 text-[#485159] px-8 md:px-12 py-3 md:py-4 rounded-full font-black text-base md:text-lg hover:bg-[#485159]/10 transition w-64 md:w-auto"
+                data-ar="تعرف علينا" 
+                data-en="About Us">
+                    تعرف علينا
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="relative py-8 md:py-24 bg-[#ffffff] border-y border-[#485159]/5 pt-16 md:pt-32">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+                
+                <div class="reveal">
+                    <span class="text-[#ffce08] font-bold tracking-widest uppercase text-xs md:text-sm" data-ar="عن الشركة" data-en="About Company">عن الشركة</span>
+                    
+                    <h2 class="text-2xl md:text-4xl font-black mt-2 mb-4 md:mt-4 md:mb-8 text-[#485159] leading-tight" data-ar="أركان الطاقة.. خبرة تمتد لأكثر من 9 اعوام" data-en="Arkan Energy.. Over 9 Years of Experience">أركان الطاقة.. خبرة تمتد لأكثر من 9 اعوام</h2>
+                    
+                    <p class="text-[#485159]/80 leading-relaxed text-sm md:text-lg mb-6" 
+                    data-ar="تأسست شركة أركان الطاقة للتجارة في عام 2017 بالمملكة العربية السعودية، ككيان وطني متخصص في تقديم حلول الطاقة المتقدمة للمركبات. نحن أكثر من مجرد مورد للبطاريات؛ نحن فريق عمل يكرس جهوده لضمان استمرارية حركتك وأمان مركبتك، مستندين إلى خبرة عميقة وفهم دقيق لاحتياجات السوق السعودي ." 
+                    data-en="Arkan Energy Trading was established in 2017 in Saudi Arabia as a national entity specializing in advanced power solutions for vehicles. We are more than just a battery supplier; we are a dedicated team ensuring your movement and safety, backed by deep expertise and a precise understanding of the Saudi market.">
+                        تأسست شركة أركان الطاقة للتجارة في عام 2017 بالمملكة العربية السعودية، ككيان وطني متخصص في تقديم حلول الطاقة المتقدمة للمركبات. نحن أكثر من مجرد مورد للبطاريات؛ نحن فريق عمل يكرس جهوده لضمان استمرارية حركتك وأمان مركبتك، مستندين إلى خبرة عميقة وفهم دقيق لاحتياجات السوق السعودي .
+                    </p>
+                    <hr>
+                
+                    <div class="hidden md:grid grid-cols-2 gap-6 mt-10">
+                        <div class="p-4 border-r-2 border-[#ffce08] bg-[#485159]/5">
+                            <h4 class="font-black text-xl mb-2 text-[#485159]" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h4>
+                            <p class="text-[#485159]/60 text-sm" 
+                            data-ar="ان نكون الشريك الأول بلا منازع في مجال طاقة السيارات، وأن نقود القطاع نحو آفاق جديدة من التميز تواكب تطلعات رؤية المملكة 2030، لنصبح النموذج الذي يحتذى به في الجودة والموثوقية والابتكار ." 
+                            data-en="To be the undisputed primary partner in automotive power, leading the sector toward new horizons of excellence aligned with Saudi Vision 2030, becoming a benchmark for quality, reliability, and innovation.">
+                                ان نكون الشريك الأول بلا منازع في مجال طاقة السيارات، وأن نقود القطاع نحو آفاق جديدة من التميز تواكب تطلعات رؤية المملكة 2030، لنصبح النموذج الذي يحتذى به في الجودة والموثوقية والابتكار .
+                            </p>
+                        </div>
+                        <div class="p-4 border-r-2 border-[#ffce08] bg-[#485159]/5">
+                            <h4 class="font-black text-xl mb-2 text-[#485159]" data-ar="مهمتنا" data-en="Our Mission">مهمتنا</h4>
+                            <p class="text-[#485159]/60 text-sm" 
+                            data-ar="نسعى لأن نكون الخيار الأمثل لكل عميل يبحث عن الجودة والأداء، من خلال توفير منتجات وخدمات تتسم بالكفاءة العالية، والمساهمة الفعالة في تعزيز البنية الاقتصادية الوطنية عبر حلول طاقة مستدامة ومتطورة ." 
+                            data-en="We strive to be the perfect choice for every customer seeking quality and performance, by providing high-efficiency products and services, effectively contributing to national economic growth through advanced and sustainable power solutions.">
+                                نسعى لأن نكون الخيار الأمثل لكل عميل يبحث عن الجودة والأداء، من خلال توفير منتجات وخدمات تتسم بالكفاءة العالية، والمساهمة الفعالة في تعزيز البنية الاقتصادية الوطنية عبر حلول طاقة مستدامة ومتطورة .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal">
+                    <div class="relative mb-8 md:mb-0">
+                        <img src="img/1.png" class="rounded-[1.5rem] md:rounded-[2rem] shadow-xl border border-[#485159]/10 relative z-10 w-full h-auto object-cover" alt="معرض أركان الطاقة">
+                        <div class="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 w-full h-full border-2 border-[#ffce08] rounded-[1.5rem] md:rounded-[2rem] z-0 opacity-20"></div>
+                    </div>
+
+                    <div class="flex flex-col gap-4 md:hidden mt-8">
+                        <div class="p-4 border-r-2 border-[#ffce08] bg-[#485159]/5">
+                            <h4 class="font-black text-lg text-[#485159] mb-2" data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h4>
+                            <p class="text-[#485159]/60 text-xs" 
+                            data-ar="ان نكون الشريك الأول بلا منازع في مجال طاقة السيارات، وأن نقود القطاع نحو آفاق جديدة من التميز تواكب تطلعات رؤية المملكة 2030، لنصبح النموذج الذي يحتذى به في الجودة والموثوقية والابتكار ." 
+                            data-en="To be the undisputed primary partner in automotive power, leading the sector toward new horizons of excellence aligned with Saudi Vision 2030, becoming a benchmark for quality, reliability, and innovation.">
+                                ان نكون الشريك الأول بلا منازع في مجال طاقة السيارات، وأن نقود القطاع نحو آفاق جديدة من التميز تواكب تطلعات رؤية المملكة 2030، لنصبح النموذج الذي يحتذى به في الجودة والموثوقية والابتكار .
+                            </p>
+                        </div>
+                        <div class="p-4 border-r-2 border-[#ffce08] bg-[#485159]/5">
+                            <h4 class="font-black text-lg text-[#485159] mb-2" data-ar="مهمتنا" data-en="Our Mission">مهمتنا</h4>
+                            <p class="text-[#485159]/60 text-xs" 
+                            data-ar="نسعى لأن نكون الخيار الأمثل لكل عميل يبحث عن الجودة والأداء، من خلال توفير منتجات وخدمات تتسم بالكفاءة العالية، والمساهمة الفعالة في تعزيز البنية الاقتصادية الوطنية عبر حلول طاقة مستدامة ومتطورة ." 
+                            data-en="We strive to be the perfect choice for every customer seeking quality and performance, by providing high-efficiency products and services, effectively contributing to national economic growth through advanced and sustainable power solutions.">
+                                نسعى لأن نكون الخيار الأمثل لكل عميل يبحث عن الجودة والأداء، من خلال توفير منتجات وخدمات تتسم بالكفاءة العالية، والمساهمة الفعالة في تعزيز البنية الاقتصادية الوطنية عبر حلول طاقة مستدامة ومتطورة .
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    <section id="features" class="py-12 md:py-24 bg-[#ffffff] border-t border-[#485159]/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10 md:mb-16 reveal">
+                <span class="text-[#ffce08] font-bold tracking-widest uppercase text-xs md:text-sm" 
+                    data-ar="كيف نعمل ؟" 
+                    data-en="How We Work?">كيف نعمل ؟</span>
+                
+                <h2 class="text-2xl md:text-5xl font-black mt-3 mb-4 md:mt-4 md:mb-6 text-[#485159]">
+                    <span data-ar="استراتيجية" data-en="Work">استراتيجية</span> 
+                    <span class="text-[#ffce08] italic" data-ar="العمل" data-en="Strategy">العمل</span>
+                </h2>
+                
+                <p class="text-[#485159]/70 max-w-2xl mx-auto text-sm md:text-base"
+                data-ar="نتبع نهجاً هندسياً دقيقاً يبدأ من دراسة احتياج العميل وينتهي بضمان استمرارية الطاقة بأعلى كفاءة ممكنة ."
+                data-en="We follow a precise engineering approach that starts from studying the client's needs and ends with ensuring energy continuity at the highest possible efficiency.">
+                نتبع نهجاً هندسياً دقيقاً يبدأ من دراسة احتياج العميل وينتهي بضمان استمرارية الطاقة بأعلى كفاءة ممكنة .
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+                <div class="p-4 md:p-8 bg-[#f9fafb] border border-[#485159]/10 rounded-[1.5rem] md:rounded-[2rem] hover:border-[#ffce08] hover:shadow-xl transition-all reveal">
+                    <h3 class="text-base md:text-xl font-black mb-2 md:mb-4 text-[#ffce08] break-words" 
+                        data-ar="الشمولية وتعدد الخيارات" 
+                        data-en="Comprehensiveness & Variety">الشمولية وتعدد الخيارات</h3>
+                    <p class="text-[10px] md:text-sm leading-relaxed text-[#485159]/60"
+                    data-ar="نتبنى استراتيجية 'المحطة الواحدة'، حيث نوفر تحت سقف واحد كافة حلول الطاقة (من بطاريات السيارات الصغيرة إلى المعدات الثقيلة والأنظمة الكهربائية)، مع الحرص على جلب أحدث التقنيات العالمية للسوق المحلي لضمان حصول العميل على الأفضل دائماً."
+                    data-en="We adopt a 'One-Stop Shop' strategy, providing all power solutions under one roof (from car batteries to heavy equipment and electrical systems), bringing the latest global technologies to ensure our clients always get the best.">
+                    نتبنى استراتيجية "المحطة الواحدة"، حيث نوفر تحت سقف واحد كافة حلول الطاقة.
+                    </p>
+                </div>
+
+                <div class="p-4 md:p-8 bg-[#f9fafb] border border-[#485159]/10 rounded-[1.5rem] md:rounded-[2rem] hover:border-[#ffce08] hover:shadow-xl transition-all reveal">
+                    <h3 class="text-base md:text-xl font-black mb-2 md:mb-4 text-[#ffce08]" 
+                        data-ar="الجاهزية وسرعة التلبية" 
+                        data-en="Readiness & Fast Delivery">الجاهزية وسرعة التلبية</h3>
+                    <p class="text-[10px] md:text-sm leading-relaxed text-[#485159]/60"
+                    data-ar="نلتزم برفع معدلات الكفاءة التشغيلية لضمان توفر المنتجات بشكل دائم في كافة فروعنا. هدفنا هو تلبية طلبات الأفراد، الشركات، والمشاريع فوراً ودون أي تأخير."
+                    data-en="We are committed to increasing operational efficiency to ensure product availability in all branches. Our goal is to meet individual and corporate demands immediately.">
+                    نلتزم برفع معدلات الكفاءة التشغيلية لضمان توفر المنتجات بشكل دائم في كافة فروعنا.
+                    </p>
+                </div>
+
+                <div class="p-4 md:p-8 bg-[#f9fafb] border border-[#485159]/10 rounded-[1.5rem] md:rounded-[2rem] hover:border-[#ffce08] hover:shadow-xl transition-all reveal">
+                    <h3 class="text-base md:text-xl font-black mb-2 md:mb-4 text-[#ffce08]" 
+                        data-ar="الشراكة والحلول الاستشارية" 
+                        data-en="Partnership & Consulting">الشراكة والحلول الاستشارية</h3>
+                    <p class="text-[10px] md:text-sm leading-relaxed text-[#485159]/60"
+                    data-ar="نحن لا نتعامل مع عملائنا كمجرد موردين، بل كشركاء نجاح نستثمر خبراتنا التقنية لتقديم حلول استشارية متكاملة قبل عملية الشراء."
+                    data-en="We treat our clients as success partners, investing our technical expertise to provide integrated consulting solutions before purchase.">
+                    نحن لا نتعامل مع عملائنا كمجرد موردين، بل كشركاء نجاح نستثمر خبراتنا التقنية.
+                    </p>
+                </div>
+
+                <div class="p-4 md:p-8 bg-[#f9fafb] border border-[#485159]/10 rounded-[1.5rem] md:rounded-[2rem] hover:border-[#ffce08] hover:shadow-xl transition-all reveal">
+                    <h3 class="text-base md:text-xl font-black mb-2 md:mb-4 text-[#ffce08]" 
+                        data-ar="الضمان وخدمة ما بعد البيع" 
+                        data-en="Warranty & After-Sales">الضمان وخدمة ما بعد البيع</h3>
+                    <p class="text-[10px] md:text-sm leading-relaxed text-[#485159]/60"
+                    data-ar="نحن نلتزم بتقديم ضمان حقيقي يمتد من سنة إلى ثلاث سنوات لضمان راحة بالكم، ونقدم لعملائنا خدمات الصيانة المتكاملة بشكل مجاني."
+                    data-en="We are committed to providing a real warranty ranging from one to three years for your peace of mind. We offer free maintenance services.">
+                    نحن نلتزم بتقديم ضمان حقيقي يمتد من سنة إلى ثلاث سنوات لضمان راحة بالكم.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-[#ffce08]">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-[#485159] text-center font-black">
+            <div>
+                <h3 class="text-3xl md:text-5xl">10</h3>
+                <p class="text-[10px] md:text-sm uppercase tracking-widest mt-2" 
+                data-ar="سنين خبرة" 
+                data-en="Years of Experience">سنين خبرة</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-5xl">+1M</h3>
+                <p class="text-[10px] md:text-sm uppercase tracking-widest mt-2" 
+                data-ar="بطارية مباعة" 
+                data-en="Batteries Sold">بطارية مباعة</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-5xl">+10K</h3>
+                <p class="text-[10px] md:text-sm uppercase tracking-widest mt-2" 
+                data-ar="عميل سعيد" 
+                data-en="Happy Clients">عميل سعيد</p>
+            </div>
+            <div>
+                <h3 class="text-3xl md:text-5xl">20</h3>
+                <p class="text-[10px] md:text-sm uppercase tracking-widest mt-2" 
+                data-ar="نقطة توزيع" 
+                data-en="Distribution Points">نقطة توزيع</p>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="py-12 md:py-24 bg-[#ffffff]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10 md:mb-20 reveal">
+                <h2 class="text-2xl md:text-5xl font-black mb-4 tracking-tight text-[#485159]">
+                    <span data-ar="منتجاتنا" data-en="Our">منتجاتنا</span> 
+                    <span class="text-[#ffce08] italic" data-ar="الاحترافية" data-en="Professional Products">الاحترافية</span>
+                </h2>
+                <p class="text-[#485159]/60 max-w-xl mx-auto text-sm md:text-base" 
+                data-ar="تشكيلة واسعة من البطاريات التي تغطي كافة احتياجاتك اليومية والصناعية."
+                data-en="A wide range of batteries covering all your daily and industrial needs.">
+                تشكيلة واسعة من البطاريات التي تغطي كافة احتياجاتك اليومية والصناعية.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-10">
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/car.png" class="w-12 h-12 md:w-20 md:h-20 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="Car Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" data-ar="بطاريات السيارات" data-en="Car Batteries">بطاريات السيارات</h3>
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                    data-ar="نوفر أحدث تقنيات البطاريات (بما فيها إي جي ام - إي اف بي - ليثيوم ) لتناسب نافة أنواع السيارات وتضمن أداءً موثوقاً وعمراً أطول ."
+                    data-en="We provide the latest battery technologies (including AGM, EFB, Lithium) to suit all cars and ensure reliable performance.">
+                    نوفر أحدث تقنيات البطاريات (بما فيها إي جي ام - إي اف بي - ليثيوم ) لتناسب نافة أنواع السيارات وتضمن أداءً موثوقاً وعمراً أطول .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/cargo-truck.png" class="w-12 h-12 md:w-20 md:h-20 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="Truck Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" data-ar="بطاريات الشاحنات" data-en="Truck Batteries">بطاريات الشاحنات</h3>
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                    data-ar="نؤمّن بطاريات 'الخدمة الشاقة' المصممة خصيصاً لتحمل الاهتزازات وظروف التشغيل القاسية للشاحنات والمعدات الثقيلة ."
+                    data-en="We provide heavy-duty batteries specifically designed to withstand vibrations and harsh operating conditions for trucks.">
+                    نؤمّن بطاريات "الخدمة الشاقة" المصممة خصيصاً لتحمل الاهتزازات وظروف التشغيل القاسية للشاحنات والمعدات الثقيلة .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/motorcycle.png" class="w-12 h-12 md:w-20 md:h-20 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="Motorcycle Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" data-ar="بطاريات الدراجات النارية" data-en="Motorcycle Batteries">بطاريات الدراجات النارية</h3>
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                    data-ar="نقدم تشكيلة واسعة من البطاريات عالية الكفاءة التي تلبي احتياجات جميع أنواع الدراجات النارية وتضمن انطلاقة قوية وموثوقه في كل رحلة ."
+                    data-en="We offer a wide range of high-efficiency batteries for all motorcycle types, ensuring a reliable start for every journey.">
+                    نقدم تشكيلة واسعة من البطاريات عالية الكفاءة التي تلبي احتياجات جميع أنواع الدراجات النارية وتضمن انطلاقة قوية وموثوقه في كل رحلة .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/golf-cart.png" class="w-12 h-12 md:w-20 md:h-20 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="Golf Cart Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" 
+                        data-ar="بطاريات عربات الجولف" 
+                        data-en="Golf Cart Batteries">بطاريات عربات الجولف</h3>
+                    
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                        data-ar="نقدم بطاريات 'الدورة العميقة' التي تمنح عربات الجولف والسيارات الكهربائية أقصى مدى تشغيلي وقوة تحمل ."
+                        data-en="We offer Deep Cycle batteries that provide golf carts and electric vehicles with maximum range and durability.">
+                        نقدم بطاريات "الدورة العميقة" التي تمنح عربات الجولف والسيارات الكهربائية أقصى مدى تشغيلي وقوة تحمل .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/ups.png" class="w-12 h-12 md:w-20 md:h-20 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="UPS Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" data-ar="بطاريات الأجهزة الكهربائية" data-en="Electrical Device Batteries">بطاريات الأجهزة الكهربائية</h3>
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                    data-ar="نوفر حلول طاقة احتياطية مستقرة لأنظمة (UPS) والأجهزة الإلكترونية، لضمان استمرار عملها وحمايتها من الانقطاع ."
+                    data-en="We provide stable backup power solutions for UPS systems and electronic devices to ensure continuity and protection.">
+                    نوفر حلول طاقة احتياطية مستقرة لأنظمة (UPS) والأجهزة الإلكترونية، لضمان استمرار عملها وحمايتها من الانقطاع .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+
+                <div class="product-card p-4 md:p-10 rounded-[1.5rem] md:rounded-[3rem] reveal bg-[#f9fafb] border border-[#485159]/10 flex flex-col">
+                    <div class="mb-4 flex justify-center">
+                        <img src="icon/machine.png" class="w-12 h-12 md:w-16 md:h-16 object-contain" style="filter: invert(72%) sepia(91%) saturate(544%) hue-rotate(352deg) brightness(105%) contrast(105%);" alt="Forklift Battery">
+                    </div>
+                    <h3 class="text-sm md:text-2xl font-black mb-2 text-[#ffce08] text-center" data-ar="بطاريات الرافعات الشوكية" data-en="Forklift Batteries">بطاريات الرافعات الشوكية</h3>
+                    <p class="text-[10px] md:text-sm text-[#485159]/70 leading-relaxed mb-4 text-center"
+                    data-ar="نوفر بطاريات الجر القوية للمصانع والمستودعات، لضمان ساعات عمل أطول وكفاءة تشغيلية عالية لمعدات المناولة ."
+                    data-en="We provide heavy-duty traction batteries for factories and warehouses, ensuring longer working hours and efficiency.">
+                    نوفر بطاريات الجر القوية للمصانع والمستودعات، لضمان ساعات عمل أطول وكفاءة تشغيلية عالية لمعدات المناولة .
+                    </p>
+                    <div class="mt-auto flex justify-center">
+                        <a href="https://arkan-battery.com/" class="orange-gradient text-[#485159] font-black px-4 py-2 md:px-8 md:py-3 rounded-full text-[10px] md:text-sm inline-block" data-ar="اطلب الآن" data-en="Order Now">اطلب الآن</a>
+                    </div>
+                </div>
+                
+                
+
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-24 bg-[#ffffff] overflow-hidden">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-4xl font-black mb-6 md:mb-12 text-[#485159]" 
+                data-ar="ثقة عملائنا" 
+                data-en="Our Clients' Trust">
+                ثقة عملائنا
+            </h2>
+            
+            <div id="testimonial-swiper" class="swiper-container max-w-4xl mx-auto overflow-hidden">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide p-6 md:p-12 bg-[#f9fafb] border border-[#ffce08]/30 rounded-[1rem] md:rounded-[2rem] italic">
+                        <p class="text-lg md:text-xl mb-4 md:mb-6 text-[#485159]" 
+                        data-ar='"إلى الأحسن والأفضل إن شاء الله، الله يبارك لهم."' 
+                        data-en='"To the best and most improved, God willing. May God bless them."'>
+                            "إلى الأحسن والأفضل إن شاء الله، الله يبارك لهم."
+                        </p>
+                        <p class="font-black text-[#ffce08]" 
+                        data-ar="- هاني السليم" 
+                        data-en="- Hani Alsaleem">
+                            - هاني السليم
+                        </p>
+                    </div>
+
+                    <div class="swiper-slide p-6 md:p-12 bg-[#f9fafb] border border-[#ffce08]/30 rounded-[1rem] md:rounded-[2rem] italic">
+                        <p class="text-lg md:text-xl mb-4 md:mb-6 text-[#485159]" 
+                        data-ar='"شكراً المنتج رائع والخدمة ممتازة"' 
+                        data-en='"Thank you, the product is great and the service is excellent"'>
+                            "شكراً المنتج رائع والخدمة ممتازة"
+                        </p>
+                        <p class="font-black text-[#ffce08]" 
+                        data-ar="- عمر حسين" 
+                        data-en="- Omar Hussein">
+                            - عمر حسين
+                        </p>
+                    </div>
+                    <div class="swiper-slide p-6 md:p-12 bg-[#f9fafb] border border-[#ffce08]/30 rounded-[1rem] md:rounded-[2rem] italic">
+                        <p class="text-lg md:text-xl mb-4 md:mb-6 text-[#485159]" 
+                        data-ar='"منتجات متنوعة، طرق دفع مناسبة، توصيل سريع"' 
+                        data-en='"Diverse products, convenient payment methods, fast delivery"'>
+                            "منتجات متنوعة، طرق دفع مناسبة، توصيل سريع"
+                        </p>
+                        <p class="font-black text-[#ffce08]" 
+                        data-ar="- عبدالله الغامدي" 
+                        data-en="- Abdullah Al-Ghamdi">
+                            - عبدالله الغامدي
+                        </p>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination mt-4 md:mt-8 relative"></div>
+            </div>
+        </div>
+    </section>
+    <section id="branches" class="py-12 md:py-24 bg-[#ffffff] border-t border-[#485159]/5">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-10 md:mb-16 reveal">
+                <span class="text-[#ffce08] font-bold tracking-widest uppercase text-xs md:text-sm" 
+                    data-ar="أين تجدنا؟" data-en="Where to find us?">أين تجدنا؟</span>
+                <h2 class="text-2xl md:text-5xl font-black mt-2 md:mt-4 mb-4 text-[#485159]">
+                    <span data-ar="زوروا" data-en="Visit">زوروا</span> 
+                    <span class="text-[#ffce08] italic" data-ar="فروعنا" data-en="Our Branches">فروعنا</span>
+                </h2>
+                <div class="h-1 w-16 md:w-24 bg-[#ffce08] mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-3 md:gap-8 items-start">
+                
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08] transition-colors" 
+                        data-ar="الرئيسي الدمام حي الفيحاء" data-en="Main Branch - Dammam Al-Fayha">الرئيسي الدمام حي الفيحاء</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="شارع عمر بن الخطاب (شارع الضغط العالي)، مقابل 'ليان هايبر'." 
+                    data-en="Omar Bin Al-Khattab St (High Pressure St), opposite Lian Hypermarket.">شارع عمر بن الخطاب (شارع الضغط العالي)، مقابل "ليان هايبر".</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0555082350" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0555082350</a>
+                        <a href="https://maps.app.goo.gl/6y25GGQDEBnauRMo7" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الدمام حي الفيحاء 2" data-en="Dammam Al-Fayha Branch 2">فرع الدمام حي الفيحاء 2</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="الدمام - شارع عمر بن الخطاب (شارع الضغط العالي)، مقابل 'صالة القوة'." 
+                    data-en="Dammam - Omar Bin Al-Khattab St, opposite Power Gym.">الدمام - شارع عمر بن الخطاب (شارع الضغط العالي)، مقابل "صالة القوة".</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0500806327" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0500806327</a>
+                        <a href="#" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الدمام حي الفيحاء 3" data-en="Dammam Al-Fayha Branch 3">فرع الدمام حي الفيحاء 3</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="شارع عمر بن الخطاب بجانب إشارة تقاطع طريق الملك سعود، بجوار تحويل الراجحي." 
+                    data-en="Omar Bin Al-Khattab St, near King Saud Rd intersection, next to Al Rajhi Tahweel.">شارع عمر بن الخطاب بجانب إشارة تقاطع طريق الملك سعود، بجوار تحويل الراجحي.</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0500806327" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0500806327</a>
+                        <a href="#" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الخبر شارع الـ 30" data-en="Al-Khobar 30th Street Branch">فرع الخبر شارع الـ 30</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="الخبر - حي الثقبة، شارع الثلاثين (الشارع التجاري) مقابل 'أسواق بن جمعة' الشهيرة." 
+                    data-en="Al-Khobar - Al Thuqbah, 30th St, opposite the famous Bin Jumaah Markets.">الخبر - حي الثقبة، شارع الثلاثين (الشارع التجاري) مقابل "أسواق بن جمعة" الشهيرة.</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0558824350" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0558824350</a>
+                        <a href="https://maps.app.goo.gl/kogUSE4Do1gdGt316" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الجبيل صناعية المساندة" data-en="Al-Jubail Support Industrial Branch">فرع الجبيل صناعية المساندة</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="الجبيل الصناعية - منطقة المساندة - مجمع الهاجري." 
+                    data-en="Jubail Industrial - Support Area - Al Hajri Complex.">الجبيل الصناعية - منطقة المساندة - مجمع الهاجري.</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0500806327" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0500806327</a>
+                        <a href="https://maps.app.goo.gl/c9hpRFRNEddjB76J9" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الجبيل صناعية المساندة" data-en="Al-Jubail Support Industrial Branch">فرع الجبيل صناعية المساندة</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="الجبيل الصناعية - منطقة المساندة - مجمع الهاجري." 
+                    data-en="Jubail Industrial - Support Area - Al Hajri Complex.">الجبيل الصناعية - منطقة المساندة - مجمع الهاجري.</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0500806327" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0500806327</a>
+                        <a href="https://maps.app.goo.gl/c9hpRFRNEddjB76J9" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الجبيل صناعية المساندة" data-en="Al-Jubail Support Industrial Branch">فرع الجبيل صناعية المساندة</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="الجبيل الصناعية - منطقة المساندة - مجمع الهاجري." 
+                    data-en="Jubail Industrial - Support Area - Al Hajri Complex.">الجبيل الصناعية - منطقة المساندة - مجمع الهاجري.</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0500806327" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0500806327</a>
+                        <a href="https://maps.app.goo.gl/c9hpRFRNEddjB76J9" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <div class="group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm flex flex-col h-full">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع الدمام شارع الملك فهد" data-en="Dammam King Fahd St Branch">فرع الدمام شارع الملك فهد</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="شارع الملك فهد بعد 'أسواق العثيم' وقبل تقاطع شارع عثمان بن عفان، بجوار شركة (DHL)." 
+                    data-en="King Fahd St, after Othaim Markets, near DHL company.">شارع الملك فهد بعد "أسواق العثيم" وقبل تقاطع شارع عثمان بن عفان، بجوار شركة الشحن (DHL)، ومقابل "الدهماني للاتصالات".</p>
+                    <div class="mt-auto flex flex-col gap-2">
+                        <a href="tel:0555082650" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-2 py-1.5 rounded-lg font-bold text-[10px] md:text-sm text-center transition-all">0555082650</a>
+                        <a href="https://maps.app.goo.gl/QWWxoBfXXmj64mTi7" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 text-center transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div>
+
+                <!-- <div class="col-span-2 group p-4 md:p-6 bg-[#f9fafb] border border-[#485159]/5 rounded-xl md:rounded-3xl hover:border-[#ffce08] transition-all duration-300 shadow-sm">
+                    <h3 class="text-sm md:text-xl font-bold mb-1 text-[#485159] group-hover:text-[#ffce08]" 
+                        data-ar="فرع مدينة جدة كيلو 14" data-en="Jeddah Branch Kilo 14">فرع مدينة جدة كيلو 14</h3>
+                    <p class="text-[#485159]/50 text-[10px] md:text-sm mb-4 italic leading-tight" 
+                    data-ar="مدينة جدة كيلو 14." data-en="Jeddah City, Kilo 14.">مدينة جدة كيلو 14.</p>
+                    <div class="flex items-center gap-4">
+                        <a href="tel:0555082650" class="bg-[#ffce08]/10 hover:bg-[#ffce08] text-[#ffce08] hover:text-[#485159] px-4 py-1.5 rounded-lg font-bold text-[10px] md:text-sm transition-all">0555082650</a>
+                        <a href="#" class="text-[#485159]/60 hover:text-[#ffce08] text-[10px] md:text-sm underline underline-offset-4 transition-colors" data-ar="الاتجاهات" data-en="Directions">الاتجاهات</a>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </section>
+    <section class="py-12 md:py-24 bg-white reveal">
+    <div class="container mx-auto px-4">
+        
+        <div class="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+            <h2 class="text-[#ffce08] font-bold text-sm md:text-lg mb-2" 
+                data-ar="سهولة التوصيل" 
+                data-en="Delivery Ease">
+                سهولة التوصيل
+            </h2>
+            <h1 class="text-[#485159] font-black text-2xl md:text-5xl mb-6 leading-tight" 
+                data-ar="توصيل إلى جميع أنحاء المملكة" 
+                data-en="Delivery to All Parts of the Kingdom">
+                توصيل إلى جميع أنحاء المملكة
+            </h1>
+            <p class="text-[#485159]/80 text-sm md:text-lg leading-relaxed"
+               data-ar="نفهم تماماً احتياجات الشركات، ولذلك نقدم خدماتنا بفخر لجميع الشركات في مختلف مدن المملكة. بفضل شبكتنا الواسعة ونظامنا اللوجستي الفعّال، نضمن توفير المنتجات التي يحتاجها العميل في الوقت المناسب."
+               data-en="We fully understand the needs of companies, and therefore we proudly offer our services to all companies in various cities of the Kingdom.">
+               نفهم تماماً احتياجات الشركات، ولذلك نقدم خدماتنا بفخر لجميع الشركات في مختلف مدن المملكة. بفضل شبكتنا الواسعة ونظامنا اللوجستي الفعّال، نضمن توفير المنتجات التي يحتاجها العميل في الوقت المناسب.
+            </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-6 md:gap-8 max-w-5xl mx-auto">
+            <div class="w-full md:w-1/2">
+                <div class="bg-[#f3f0f] rounded-[1.5rem] md:rounded-[2rem] p-4 border border-[#485159]/5 shadow-sm h-full flex items-center">
+                    <img src="img/Adobe Express - file.png" alt="Delivery Map" class="w-full h-auto rounded-xl object-contain">
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2">
+                <div class="bg-[#f9faf] rounded-[1.5rem] md:rounded-[2rem] p-4 border border-[#485159]/5 shadow-sm h-full flex items-center">
+                    <img src="img/store.png" alt="Logistics" class="w-full h-auto rounded-xl object-contain">
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+    <section id="contact" class="bg-[#ffffff] text-[#485159] py-12 px-2">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-8 reveal">
+                <h2 class="text-xl md:text-5xl font-bold text-[#ffce08] mb-3" 
+                    data-ar="تواصل معنا" 
+                    data-en="Contact Us">تواصل معنا</h2>
+               <p class="text-[#485159]/70 text-[10px] md:text-lg max-w-2xl mx-auto px-4"
+                    data-ar="في أركان للطاقة، لا تنتهي مهمتنا عند البيع، بل تبدأ شراكتنا معكم من لحظة التواصل. ندعوكم لزيارة فروعنا أو الاتصال بنا لتكتشفوا بأنفسكم جودة خدماتنا وتنوع منتجاتنا."
+                    data-en="At Arkan Energy, our mission doesn't end at the sale; our partnership with you begins from the moment of contact. We invite you to visit our branches or contact us to discover our quality services and diverse products.">
+                    في أركان للطاقة، لا تنتهي مهمتنا عند البيع، بل تبدأ شراكتنا معكم من لحظة التواصل. ندعوكم لزيارة فروعنا أو الاتصال بنا لتكتشفوا بأنفسكم جودة خدماتنا وتنوع منتجاتنا.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2 md:gap-8 items-stretch">
+                <div class="relative overflow-hidden rounded-2xl group reveal aspect-square md:aspect-auto md:min-h-[400px] border border-[#485159]/5 shadow-sm">
+                    <img src="img/2.png" alt="Contact" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#485159]/90 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-2 right-2 left-2 md:bottom-8 md:right-8 md:left-8 transition-transform duration-500 group-hover:-translate-y-1">
+                        <p class="text-[#ffce08] font-bold text-[9px] md:text-2xl" 
+                        data-ar="نحن دائماً بالقرب منك" data-en="Always Near You">نحن دائماً بالقرب منك</p>
+                        <p class="text-white text-[7px] md:text-sm opacity-90" 
+                        data-ar="أينما كنت.. طاقتنا تصل إليك" data-en="Our power reaches you anywhere">أينما كنت.. طاقتنا تصل إليك</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between reveal p-3 md:p-8 bg-[#f9fafb] rounded-2xl border border-[#485159]/5 aspect-square md:aspect-auto overflow-hidden">
+                    <h3 class="text-[11px] md:text-2xl font-bold text-[#485159] leading-tight mb-2 md:mb-6" 
+                        data-ar="قنوات التواصل المباشر" data-en="Direct Contact Channels">قنوات التواصل المباشر</h3>
+                    
+                    <div class="space-y-2 md:space-y-6">
+                        <div class="flex items-center gap-2 md:gap-3 group">
+                            <div class="w-7 h-7 md:w-12 md:h-12 flex-shrink-0 bg-[#ffce08]/10 rounded-full flex items-center justify-center text-[#ffce08]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="md:w-5 md:h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328z"/></svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[#485159]/50 text-[9px] md:text-xs leading-none" data-ar="الرقم الموحد" data-en="Unified Number">الرقم الموحد</p>
+                                <a href="tel:0555082350" class="text-[#485159] font-bold text-[11px] md:text-base block">0555082350</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 md:gap-3 group">
+                            <div class="w-7 h-7 md:w-12 md:h-12 flex-shrink-0 bg-[#ffce08]/10 rounded-full flex items-center justify-center text-[#ffce08]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="md:w-5 md:h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.104-1.076a7.863 7.863 0 0 0 3.886 1.02h.004c4.367 0 7.926-3.558 7.93-7.93a7.856 7.856 0 0 0-2.323-5.688zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/></svg>
+                            </div>
+                            <div class="min-w-0">
+                                <p class="text-[#485159]/50 text-[9px] md:text-xs leading-none" data-ar="واتساب" data-en="WhatsApp">واتساب</p>
+                                <a href="https://wa.me/966555082350" target="_blank" class="text-[#485159] font-bold text-[11px] md:text-base block">0555082350</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 md:gap-3 group min-w-0">
+                            <div class="w-7 h-7 md:w-12 md:h-12 flex-shrink-0 bg-[#ffce08]/10 rounded-full flex items-center justify-center text-[#ffce08]">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" class="md:w-5 md:h-5" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114V5.383zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.731z"/></svg>
+                            </div>
+                            <div class="min-w-0 flex-1">
+                                <p class="text-[#485159]/50 text-[9px] md:text-xs leading-none" data-ar="البريد" data-en="Email">البريد</p>
+                                <a href="mailto:arkan-energy@hotmail.com" class="text-[#485159] font-bold text-[9px] md:text-sm block truncate">arkan-energy@hotmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-2 p-2 md:p-3 bg-[#ffce08]/5 rounded-lg border border-[#ffce08]/10">
+                        <h4 class="text-[#ffce08] font-bold text-[10px] md:text-sm mb-0.5" data-ar="أوقات العمل" data-en="Working Hours">أوقات العمل</h4>
+                        <div class="flex flex-col gap-0.5">
+                            <p class="text-[#485159] text-[9px] md:text-xs leading-none" data-ar="السبت-الخميس: 7ص-10م" data-en="Sat-Thu: 7AM-10PM">السبت-الخميس: 7ص-10م</p>
+                            <p class="text-[#485159] text-[9px] md:text-xs leading-none" data-ar="الجمعة: 4م-10م" data-en="Fri: 4PM-10PM">الجمعة: 4م-10م</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="py-8 md:py-12 bg-[#ffffff] border-t border-[#485159]/10 text-center px-4">
+        <p class="text-[#485159] font-bold text-[10px] md:text-base" 
+        data-ar="© 2026 أركان الطاقة للتجارة. جميع الحقوق محفوظة." 
+        data-en="© 2026 Arkan Energy for Trading. All rights reserved.">
+        © 2026 أركان الطاقة للتجارة. جميع الحقوق محفوظة.
+        </p>
+    </footer>
+ <script>
+    //---------------- تغيير لون الشعار 
+   
+    const logo = document.getElementById('main-logo');
+    const darkLogo = "img/logo_dart.png";  // مسار شعارك الغامق
+    const lightLogo = "img/logo_dart.png"; // مسار شعارك الفاتح
+
+    function updateLogo() {
+        // التحقق إذا كان الهاتف مفعل للوضع الليلي
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            logo.src = lightLogo;
+        } else {
+            logo.src = darkLogo;
+        }
+    }
+
+    // تشغيل الدالة عند تحميل الصفحة
+    updateLogo();
+
+    // مراقبة التغيير إذا قام المستخدم بتبديل الوضع وهو داخل الموقع
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateLogo);
+
+
+    //--------------------------------------------------------
+    try {
+        ScrollReveal().reveal('.reveal', {
+            distance: '50px',
+            duration: 1000,
+            origin: 'bottom',
+            interval: 100,
+            reset: false,
+            mobile: true,
+            beforeReveal: function (el) {
+                el.style.opacity = "1";
+            }
+        });
+    } catch (e) {
+        console.log("ScrollReveal non-functional, showing elements manually.");
+        document.querySelectorAll('.reveal').forEach(el => el.style.opacity = "1");
+    }
+
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoplay: { 
+            delay: 5000,
+            disableOnInteraction: false 
+        },
+        pagination: { 
+            el: '.swiper-pagination', 
+            clickable: true 
+        },
+    });
+
+    // تحسين التنقل السلس بين الأقسام
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    const headerOffset = 80; 
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+    });
+
+    // إضافة لمسة جمالية لنقاط الترقيم لتناسب الهوية الجديدة
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .swiper-pagination-bullet-active { background: #ffce08 !important; }
+        .swiper-pagination-bullet { background: #485159; }
+    `;
+    document.head.appendChild(style);
+
+
+    // ----------------------------------اللغه
+
+  // نقوم بتعريف متغير عام لتخزين نسخة السوايبير لسهولة التحكم بها
+let testimonialSwiper;
+
+// دالة تحويل قوية تستهدف كل الأرقام العربية (الهندية) في النص
+function forceNumberConversion(text, lang) {
+    if (!text) return "";
+    const arNumbers = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g];
+    const enNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    
+    // إذا كانت اللغة إنجليزية، نحول أي رقم عربي وجدناه إلى إنجليزي
+    if (lang === 'en') {
+        for (let i = 0; i < 10; i++) {
+            text = text.toString().replace(arNumbers[i], enNumbers[i]);
+        }
+    }
+    return text;
+}
+
+function initSwiper() {
+    if (testimonialSwiper) testimonialSwiper.destroy(true, true);
+    const swiperElem = document.querySelector('#testimonial-swiper');
+    if (swiperElem) {
+        testimonialSwiper = new Swiper('#testimonial-swiper', {
+            loop: true,
+            rtl: document.documentElement.dir === 'rtl',
+            pagination: { el: '.swiper-pagination', clickable: true },
+            speed: 800,
+            autoplay: { delay: 5000 },
+            observer: true,
+            observeParents: true,
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const langBtn = document.getElementById('lang-switch');
+    const langText = document.getElementById('lang-text');
+    let currentLang = localStorage.getItem('selectedLang') || 'ar';
+
+    function updateLanguage(lang) {
+        const isEn = lang === 'en';
+
+        // 1. تحديث العناصر التي تحمل سمات الترجمة
+        document.querySelectorAll('[data-ar]').forEach(el => {
+            const rawText = el.getAttribute(`data-${lang}`);
+            // تحويل الأرقام داخل النص المترجم
+            el.textContent = forceNumberConversion(rawText, lang);
+        });
+
+        // 2. "التنظيف العميق": البحث عن أي أرقام تائهة في الأزرار أو الروابط أو الفقرات
+        // استهداف أرقام الهواتف والفقرات في قسم التواصل تحديداً
+        if (isEn) {
+            document.querySelectorAll('p, span, a, h1, h2, h3').forEach(el => {
+                // فقط للعناصر التي لا تحتوي على أطفال (لتجنب تدمير الهيكل)
+                if (el.children.length === 0) {
+                    el.textContent = forceNumberConversion(el.textContent, 'en');
+                }
+            });
+        }
+
+        // 3. ضبط الاتجاه والخط
+        document.documentElement.dir = isEn ? 'ltr' : 'rtl';
+        document.documentElement.lang = lang;
+        
+        if (langText) {
+            langText.textContent = isEn ? 'العربية' : 'English';
+        }
+
+        // تغيير الخط بشكل قسري (Important) لأن الخطوط العربية تفرض شكل الأرقام
+        if (isEn) {
+            document.body.style.setProperty('font-family', "'Inter', sans-serif", 'important');
+        } else {
+            document.body.style.setProperty('font-family', "'Cairo', sans-serif", 'important');
+        }
+
+        localStorage.setItem('selectedLang', lang);
+        currentLang = lang;
+
+        setTimeout(initSwiper, 150);
+    }
+
+    updateLanguage(currentLang);
+
+    if (langBtn) {
+        langBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const nextLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateLanguage(nextLang);
+        });
+    }
+});
+</script>
+</body>
+</html>
